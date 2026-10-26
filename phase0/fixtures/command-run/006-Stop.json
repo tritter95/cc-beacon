@@ -1,0 +1,34 @@
+{
+  "seq": 6,
+  "receivedAt": "2026-10-26T01:20:59.173Z",
+  "receivedAtMs": 1792977659173,
+  "method": "POST",
+  "url": "/cc-beacon/v1/hook",
+  "headers": {
+    "host": "127.0.0.1:48899",
+    "user-agent": "curl/8.7.1",
+    "accept": "*/*",
+    "content-type": "application/json",
+    "x-cc-beacon-token": "phase0-literal-token",
+    "x-cc-beacon-window": "tmux-window-1",
+    "x-cc-beacon-entrypoint": "cli",
+    "x-cc-beacon-claude-pid": "46668",
+    "content-length": "1064"
+  },
+  "body": {
+    "session_id": "7d96536a-aee3-4338-8210-e2ac039bfb38",
+    "transcript_path": "/Users/todd/.claude/projects/-private-tmp-claude-501--Users-todd-Documents-GitHub-cc-beacon-cd75701b-2811-4417-b23e-6271d383ad45-scratchpad-testproj/7d96536a-aee3-4338-8210-e2ac039bfb38.jsonl",
+    "cwd": "/private/tmp/claude-501/-Users-todd-Documents-GitHub-cc-beacon/cd75701b-2811-4417-b23e-6271d383ad45/scratchpad/testproj",
+    "scratchpad_dir": "/private/tmp/claude-501/-private-tmp-claude-501--Users-todd-Documents-GitHub-cc-beacon-cd75701b-2811-4417-b23e-6271d383ad45-scratchpad-testproj/7d96536a-aee3-4338-8210-e2ac039bfb38/scratchpad",
+    "prompt_id": "481c3e72-0cb1-417c-8d2d-a139700bf23a",
+    "permission_mode": "default",
+    "effort": {
+      "level": "medium"
+    },
+    "hook_event_name": "Stop",
+    "stop_hook_active": false,
+    "last_assistant_message": "I ran `touch probe-file-4.txt` and it completed with no output. The file was created in the working directory, `/private/tmp/claude-501/-Users-todd-Documents-GitHub-cc-beacon/cd75701b-2811-4417-b23e-6271d383ad45/scratchpad/testproj`.",
+    "background_tasks": [],
+    "session_crons": []
+  }
+}

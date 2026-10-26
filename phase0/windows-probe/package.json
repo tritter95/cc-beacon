@@ -1,0 +1,33 @@
+{
+  "name": "ccb-win-probe",
+  "displayName": "CC Beacon Phase 0 Windows Probe",
+  "description": "Throwaway probe: toast worker, click routing, Mark-of-the-Web and hook forms on Windows.",
+  "version": "0.0.1",
+  "publisher": "phase0",
+  "private": true,
+  "license": "SEE LICENSE IN LICENSE.txt",
+  "engines": {
+    "vscode": "^1.93.0"
+  },
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "main": "./extension.js",
+  "contributes": {
+    "commands": [
+      { "command": "ccbWinProbe.toast", "title": "CC Beacon Win Probe: 1. Toast (click test)" },
+      { "command": "ccbWinProbe.persistent", "title": "CC Beacon Win Probe: 2. Persistent toast, withdrawn after 20 s" },
+      { "command": "ccbWinProbe.fallbackToast", "title": "CC Beacon Win Probe: 3. Toast under the PowerShell identity" },
+      { "command": "ccbWinProbe.hookStart", "title": "CC Beacon Win Probe: 4. Hook test: start" },
+      { "command": "ccbWinProbe.hookStopListener", "title": "CC Beacon Win Probe: 5. Hook test: stop listening" },
+      { "command": "ccbWinProbe.hookRemove", "title": "CC Beacon Win Probe: 6. Hook test: remove hooks" },
+      { "command": "ccbWinProbe.openLog", "title": "CC Beacon Win Probe: Open log" }
+    ]
+  },
+  "capabilities": {
+    "untrustedWorkspaces": {
+      "supported": true
+    },
+    "virtualWorkspaces": false
+  }
+}

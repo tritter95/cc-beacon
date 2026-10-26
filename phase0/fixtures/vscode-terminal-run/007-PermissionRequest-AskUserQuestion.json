@@ -1,0 +1,49 @@
+{
+  "seq": 7,
+  "receivedAt": "2026-10-26T02:32:01.326Z",
+  "receivedAtMs": 1792981921326,
+  "method": "POST",
+  "url": "/cc-beacon/v1/hook",
+  "headers": {
+    "host": "127.0.0.1:48899",
+    "user-agent": "curl/8.7.1",
+    "accept": "*/*",
+    "content-type": "application/json",
+    "x-cc-beacon-token": "phase0-literal-token",
+    "x-cc-beacon-entrypoint": "cli",
+    "x-cc-beacon-claude-pid": "89377",
+    "content-length": "959"
+  },
+  "body": {
+    "session_id": "721139f8-1ddf-45bc-9fd7-7d115726244a",
+    "transcript_path": "/Users/todd/.claude/projects/-private-tmp-claude-501--Users-todd-Documents-GitHub-cc-beacon-cd75701b-2811-4417-b23e-6271d383ad45-scratchpad-testproj2/721139f8-1ddf-45bc-9fd7-7d115726244a.jsonl",
+    "cwd": "/private/tmp/claude-501/-Users-todd-Documents-GitHub-cc-beacon/cd75701b-2811-4417-b23e-6271d383ad45/scratchpad/testproj2",
+    "scratchpad_dir": "/private/tmp/claude-501/-private-tmp-claude-501--Users-todd-Documents-GitHub-cc-beacon-cd75701b-2811-4417-b23e-6271d383ad45-scratchpad-testproj2/721139f8-1ddf-45bc-9fd7-7d115726244a/scratchpad",
+    "prompt_id": "2b2525ff-5ae3-4d75-939b-d6a16060bdaa",
+    "permission_mode": "auto",
+    "effort": {
+      "level": "xhigh"
+    },
+    "hook_event_name": "PermissionRequest",
+    "tool_name": "AskUserQuestion",
+    "tool_input": {
+      "questions": [
+        {
+          "question": "Red or blue?",
+          "header": "Color",
+          "options": [
+            {
+              "label": "Red",
+              "description": "Red"
+            },
+            {
+              "label": "Blue",
+              "description": "Blue"
+            }
+          ],
+          "multiSelect": false
+        }
+      ]
+    }
+  }
+}

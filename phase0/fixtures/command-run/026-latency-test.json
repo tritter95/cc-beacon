@@ -1,0 +1,21 @@
+{
+  "seq": 26,
+  "receivedAt": "2026-10-26T01:23:13.853Z",
+  "receivedAtMs": 1792977793853,
+  "method": "POST",
+  "url": "/cc-beacon/v1/hook",
+  "headers": {
+    "host": "127.0.0.1:48899",
+    "user-agent": "curl/8.7.1",
+    "accept": "*/*",
+    "content-type": "application/json",
+    "x-cc-beacon-token": "phase0-literal-token",
+    "x-cc-beacon-entrypoint": "cli",
+    "x-cc-beacon-claude-pid": "23837",
+    "content-length": "51"
+  },
+  "body": {
+    "hook_event_name": "latency-test",
+    "session_id": "x"
+  }
+}

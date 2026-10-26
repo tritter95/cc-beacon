@@ -1,0 +1,305 @@
+{
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "http",
+            "url": "http://127.0.0.1:48899/cc-beacon/v1/hook",
+            "timeout": 3,
+            "headers": {
+              "X-CC-Beacon-Token": "phase0-literal-token",
+              "X-CC-Beacon-Window": "$CC_BEACON_WINDOW",
+              "X-CC-Beacon-Entrypoint": "$CLAUDE_CODE_ENTRYPOINT",
+              "X-CC-Beacon-Claude-Pid": "$CLAUDE_PID"
+            },
+            "allowedEnvVars": [
+              "CC_BEACON_WINDOW",
+              "CLAUDE_CODE_ENTRYPOINT",
+              "CLAUDE_PID"
+            ]
+          },
+          {
+            "type": "command",
+            "command": "sh '/Users/todd/Documents/GitHub/cc-beacon/phase0/recorder/env-dump.sh'",
+            "timeout": 5
+          }
+        ]
+      }
+    ],
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          {
+            "type": "http",
+            "url": "http://127.0.0.1:48899/cc-beacon/v1/hook",
+            "timeout": 3,
+            "headers": {
+              "X-CC-Beacon-Token": "phase0-literal-token",
+              "X-CC-Beacon-Window": "$CC_BEACON_WINDOW",
+              "X-CC-Beacon-Entrypoint": "$CLAUDE_CODE_ENTRYPOINT",
+              "X-CC-Beacon-Claude-Pid": "$CLAUDE_PID"
+            },
+            "allowedEnvVars": [
+              "CC_BEACON_WINDOW",
+              "CLAUDE_CODE_ENTRYPOINT",
+              "CLAUDE_PID"
+            ]
+          }
+        ]
+      }
+    ],
+    "PreToolUse": [
+      {
+        "hooks": [
+          {
+            "type": "http",
+            "url": "http://127.0.0.1:48899/cc-beacon/v1/hook",
+            "timeout": 3,
+            "headers": {
+              "X-CC-Beacon-Token": "phase0-literal-token",
+              "X-CC-Beacon-Window": "$CC_BEACON_WINDOW",
+              "X-CC-Beacon-Entrypoint": "$CLAUDE_CODE_ENTRYPOINT",
+              "X-CC-Beacon-Claude-Pid": "$CLAUDE_PID"
+            },
+            "allowedEnvVars": [
+              "CC_BEACON_WINDOW",
+              "CLAUDE_CODE_ENTRYPOINT",
+              "CLAUDE_PID"
+            ]
+          }
+        ]
+      }
+    ],
+    "PermissionRequest": [
+      {
+        "hooks": [
+          {
+            "type": "http",
+            "url": "http://127.0.0.1:48899/cc-beacon/v1/hook",
+            "timeout": 3,
+            "headers": {
+              "X-CC-Beacon-Token": "phase0-literal-token",
+              "X-CC-Beacon-Window": "$CC_BEACON_WINDOW",
+              "X-CC-Beacon-Entrypoint": "$CLAUDE_CODE_ENTRYPOINT",
+              "X-CC-Beacon-Claude-Pid": "$CLAUDE_PID"
+            },
+            "allowedEnvVars": [
+              "CC_BEACON_WINDOW",
+              "CLAUDE_CODE_ENTRYPOINT",
+              "CLAUDE_PID"
+            ]
+          }
+        ]
+      }
+    ],
+    "PermissionDenied": [
+      {
+        "hooks": [
+          {
+            "type": "http",
+            "url": "http://127.0.0.1:48899/cc-beacon/v1/hook",
+            "timeout": 3,
+            "headers": {
+              "X-CC-Beacon-Token": "phase0-literal-token",
+              "X-CC-Beacon-Window": "$CC_BEACON_WINDOW",
+              "X-CC-Beacon-Entrypoint": "$CLAUDE_CODE_ENTRYPOINT",
+              "X-CC-Beacon-Claude-Pid": "$CLAUDE_PID"
+            },
+            "allowedEnvVars": [
+              "CC_BEACON_WINDOW",
+              "CLAUDE_CODE_ENTRYPOINT",
+              "CLAUDE_PID"
+            ]
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "hooks": [
+          {
+            "type": "http",
+            "url": "http://127.0.0.1:48899/cc-beacon/v1/hook",
+            "timeout": 3,
+            "headers": {
+              "X-CC-Beacon-Token": "phase0-literal-token",
+              "X-CC-Beacon-Window": "$CC_BEACON_WINDOW",
+              "X-CC-Beacon-Entrypoint": "$CLAUDE_CODE_ENTRYPOINT",
+              "X-CC-Beacon-Claude-Pid": "$CLAUDE_PID"
+            },
+            "allowedEnvVars": [
+              "CC_BEACON_WINDOW",
+              "CLAUDE_CODE_ENTRYPOINT",
+              "CLAUDE_PID"
+            ]
+          }
+        ]
+      }
+    ],
+    "PostToolUseFailure": [
+      {
+        "hooks": [
+          {
+            "type": "http",
+            "url": "http://127.0.0.1:48899/cc-beacon/v1/hook",
+            "timeout": 3,
+            "headers": {
+              "X-CC-Beacon-Token": "phase0-literal-token",
+              "X-CC-Beacon-Window": "$CC_BEACON_WINDOW",
+              "X-CC-Beacon-Entrypoint": "$CLAUDE_CODE_ENTRYPOINT",
+              "X-CC-Beacon-Claude-Pid": "$CLAUDE_PID"
+            },
+            "allowedEnvVars": [
+              "CC_BEACON_WINDOW",
+              "CLAUDE_CODE_ENTRYPOINT",
+              "CLAUDE_PID"
+            ]
+          }
+        ]
+      }
+    ],
+    "Notification": [
+      {
+        "hooks": [
+          {
+            "type": "http",
+            "url": "http://127.0.0.1:48899/cc-beacon/v1/hook",
+            "timeout": 3,
+            "headers": {
+              "X-CC-Beacon-Token": "phase0-literal-token",
+              "X-CC-Beacon-Window": "$CC_BEACON_WINDOW",
+              "X-CC-Beacon-Entrypoint": "$CLAUDE_CODE_ENTRYPOINT",
+              "X-CC-Beacon-Claude-Pid": "$CLAUDE_PID"
+            },
+            "allowedEnvVars": [
+              "CC_BEACON_WINDOW",
+              "CLAUDE_CODE_ENTRYPOINT",
+              "CLAUDE_PID"
+            ]
+          },
+          {
+            "type": "command",
+            "command": "sh '/Users/todd/Documents/GitHub/cc-beacon/phase0/recorder/env-dump.sh'",
+            "timeout": 5
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "http",
+            "url": "http://127.0.0.1:48899/cc-beacon/v1/hook",
+            "timeout": 3,
+            "headers": {
+              "X-CC-Beacon-Token": "phase0-literal-token",
+              "X-CC-Beacon-Window": "$CC_BEACON_WINDOW",
+              "X-CC-Beacon-Entrypoint": "$CLAUDE_CODE_ENTRYPOINT",
+              "X-CC-Beacon-Claude-Pid": "$CLAUDE_PID"
+            },
+            "allowedEnvVars": [
+              "CC_BEACON_WINDOW",
+              "CLAUDE_CODE_ENTRYPOINT",
+              "CLAUDE_PID"
+            ]
+          },
+          {
+            "type": "command",
+            "command": "sh '/Users/todd/Documents/GitHub/cc-beacon/phase0/recorder/env-dump.sh'",
+            "timeout": 5
+          }
+        ]
+      }
+    ],
+    "StopFailure": [
+      {
+        "hooks": [
+          {
+            "type": "http",
+            "url": "http://127.0.0.1:48899/cc-beacon/v1/hook",
+            "timeout": 3,
+            "headers": {
+              "X-CC-Beacon-Token": "phase0-literal-token",
+              "X-CC-Beacon-Window": "$CC_BEACON_WINDOW",
+              "X-CC-Beacon-Entrypoint": "$CLAUDE_CODE_ENTRYPOINT",
+              "X-CC-Beacon-Claude-Pid": "$CLAUDE_PID"
+            },
+            "allowedEnvVars": [
+              "CC_BEACON_WINDOW",
+              "CLAUDE_CODE_ENTRYPOINT",
+              "CLAUDE_PID"
+            ]
+          }
+        ]
+      }
+    ],
+    "SubagentStop": [
+      {
+        "hooks": [
+          {
+            "type": "http",
+            "url": "http://127.0.0.1:48899/cc-beacon/v1/hook",
+            "timeout": 3,
+            "headers": {
+              "X-CC-Beacon-Token": "phase0-literal-token",
+              "X-CC-Beacon-Window": "$CC_BEACON_WINDOW",
+              "X-CC-Beacon-Entrypoint": "$CLAUDE_CODE_ENTRYPOINT",
+              "X-CC-Beacon-Claude-Pid": "$CLAUDE_PID"
+            },
+            "allowedEnvVars": [
+              "CC_BEACON_WINDOW",
+              "CLAUDE_CODE_ENTRYPOINT",
+              "CLAUDE_PID"
+            ]
+          }
+        ]
+      }
+    ],
+    "Elicitation": [
+      {
+        "hooks": [
+          {
+            "type": "http",
+            "url": "http://127.0.0.1:48899/cc-beacon/v1/hook",
+            "timeout": 3,
+            "headers": {
+              "X-CC-Beacon-Token": "phase0-literal-token",
+              "X-CC-Beacon-Window": "$CC_BEACON_WINDOW",
+              "X-CC-Beacon-Entrypoint": "$CLAUDE_CODE_ENTRYPOINT",
+              "X-CC-Beacon-Claude-Pid": "$CLAUDE_PID"
+            },
+            "allowedEnvVars": [
+              "CC_BEACON_WINDOW",
+              "CLAUDE_CODE_ENTRYPOINT",
+              "CLAUDE_PID"
+            ]
+          }
+        ]
+      }
+    ],
+    "SessionEnd": [
+      {
+        "hooks": [
+          {
+            "type": "http",
+            "url": "http://127.0.0.1:48899/cc-beacon/v1/hook",
+            "timeout": 3,
+            "headers": {
+              "X-CC-Beacon-Token": "phase0-literal-token",
+              "X-CC-Beacon-Window": "$CC_BEACON_WINDOW",
+              "X-CC-Beacon-Entrypoint": "$CLAUDE_CODE_ENTRYPOINT",
+              "X-CC-Beacon-Claude-Pid": "$CLAUDE_PID"
+            },
+            "allowedEnvVars": [
+              "CC_BEACON_WINDOW",
+              "CLAUDE_CODE_ENTRYPOINT",
+              "CLAUDE_PID"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

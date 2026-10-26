@@ -1,0 +1,46 @@
+{
+  "seq": 11,
+  "receivedAt": "2026-10-26T01:15:17.691Z",
+  "receivedAtMs": 1792977317691,
+  "method": "POST",
+  "url": "/cc-beacon/v1/hook",
+  "headers": {
+    "accept": "application/json, text/plain, */*",
+    "content-type": "application/json",
+    "x-cc-beacon-token": "phase0-literal-token",
+    "x-cc-beacon-window": "tmux-window-1",
+    "x-cc-beacon-entrypoint": "cli",
+    "x-cc-beacon-claude-pid": "",
+    "user-agent": "axios/1.15.2",
+    "content-length": "1025",
+    "accept-encoding": "gzip, compress, deflate, br",
+    "host": "127.0.0.1:48899",
+    "connection": "keep-alive"
+  },
+  "body": {
+    "session_id": "bd12bab8-34f4-4c8f-ad91-80f9368ad85f",
+    "transcript_path": "/Users/todd/.claude/projects/-private-tmp-claude-501--Users-todd-Documents-GitHub-cc-beacon-cd75701b-2811-4417-b23e-6271d383ad45-scratchpad-testproj/bd12bab8-34f4-4c8f-ad91-80f9368ad85f.jsonl",
+    "cwd": "/private/tmp/claude-501/-Users-todd-Documents-GitHub-cc-beacon/cd75701b-2811-4417-b23e-6271d383ad45/scratchpad/testproj",
+    "scratchpad_dir": "/private/tmp/claude-501/-private-tmp-claude-501--Users-todd-Documents-GitHub-cc-beacon-cd75701b-2811-4417-b23e-6271d383ad45-scratchpad-testproj/bd12bab8-34f4-4c8f-ad91-80f9368ad85f/scratchpad",
+    "prompt_id": "2566932c-1f9e-4e47-99b0-cc495099fc81",
+    "permission_mode": "default",
+    "effort": {
+      "level": "medium"
+    },
+    "hook_event_name": "PostToolUse",
+    "tool_name": "Bash",
+    "tool_input": {
+      "command": "touch probe-file.txt",
+      "description": "Create empty file probe-file.txt"
+    },
+    "tool_response": {
+      "stdout": "",
+      "stderr": "",
+      "interrupted": false,
+      "isImage": false,
+      "noOutputExpected": true
+    },
+    "tool_use_id": "toolu_01QPGHmobRcFn2Pd7v3iwT8E",
+    "duration_ms": 44
+  }
+}

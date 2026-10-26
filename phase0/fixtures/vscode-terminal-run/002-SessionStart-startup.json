@@ -1,0 +1,26 @@
+{
+  "seq": 2,
+  "receivedAt": "2026-10-26T02:30:49.679Z",
+  "receivedAtMs": 1792981849679,
+  "method": "POST",
+  "url": "/cc-beacon/v1/hook",
+  "headers": {
+    "host": "127.0.0.1:48899",
+    "user-agent": "curl/8.7.1",
+    "accept": "*/*",
+    "content-type": "application/json",
+    "x-cc-beacon-token": "phase0-literal-token",
+    "x-cc-beacon-entrypoint": "cli",
+    "x-cc-beacon-claude-pid": "89377",
+    "content-length": "686"
+  },
+  "body": {
+    "session_id": "721139f8-1ddf-45bc-9fd7-7d115726244a",
+    "transcript_path": "/Users/todd/.claude/projects/-private-tmp-claude-501--Users-todd-Documents-GitHub-cc-beacon-cd75701b-2811-4417-b23e-6271d383ad45-scratchpad-testproj2/721139f8-1ddf-45bc-9fd7-7d115726244a.jsonl",
+    "cwd": "/private/tmp/claude-501/-Users-todd-Documents-GitHub-cc-beacon/cd75701b-2811-4417-b23e-6271d383ad45/scratchpad/testproj2",
+    "scratchpad_dir": "/private/tmp/claude-501/-private-tmp-claude-501--Users-todd-Documents-GitHub-cc-beacon-cd75701b-2811-4417-b23e-6271d383ad45-scratchpad-testproj2/721139f8-1ddf-45bc-9fd7-7d115726244a/scratchpad",
+    "hook_event_name": "SessionStart",
+    "source": "startup",
+    "model": "claude-opus-5-5"
+  }
+}

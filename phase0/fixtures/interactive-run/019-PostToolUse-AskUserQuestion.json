@@ -1,0 +1,81 @@
+{
+  "seq": 19,
+  "receivedAt": "2026-10-26T01:16:49.208Z",
+  "receivedAtMs": 1792977409208,
+  "method": "POST",
+  "url": "/cc-beacon/v1/hook",
+  "headers": {
+    "accept": "application/json, text/plain, */*",
+    "content-type": "application/json",
+    "x-cc-beacon-token": "phase0-literal-token",
+    "x-cc-beacon-window": "tmux-window-1",
+    "x-cc-beacon-entrypoint": "cli",
+    "x-cc-beacon-claude-pid": "",
+    "user-agent": "axios/1.15.2",
+    "content-length": "1379",
+    "accept-encoding": "gzip, compress, deflate, br",
+    "host": "127.0.0.1:48899",
+    "connection": "keep-alive"
+  },
+  "body": {
+    "session_id": "bd12bab8-34f4-4c8f-ad91-80f9368ad85f",
+    "transcript_path": "/Users/todd/.claude/projects/-private-tmp-claude-501--Users-todd-Documents-GitHub-cc-beacon-cd75701b-2811-4417-b23e-6271d383ad45-scratchpad-testproj/bd12bab8-34f4-4c8f-ad91-80f9368ad85f.jsonl",
+    "cwd": "/private/tmp/claude-501/-Users-todd-Documents-GitHub-cc-beacon/cd75701b-2811-4417-b23e-6271d383ad45/scratchpad/testproj",
+    "scratchpad_dir": "/private/tmp/claude-501/-private-tmp-claude-501--Users-todd-Documents-GitHub-cc-beacon-cd75701b-2811-4417-b23e-6271d383ad45-scratchpad-testproj/bd12bab8-34f4-4c8f-ad91-80f9368ad85f/scratchpad",
+    "prompt_id": "9c778d81-6206-45b7-8c12-7ae097965962",
+    "permission_mode": "default",
+    "effort": {
+      "level": "medium"
+    },
+    "hook_event_name": "PostToolUse",
+    "tool_name": "AskUserQuestion",
+    "tool_input": {
+      "questions": [
+        {
+          "question": "Do you prefer red or blue?",
+          "header": "Color",
+          "options": [
+            {
+              "label": "Red",
+              "description": "Pick red."
+            },
+            {
+              "label": "Blue",
+              "description": "Pick blue."
+            }
+          ],
+          "multiSelect": false
+        }
+      ],
+      "answers": {
+        "Do you prefer red or blue?": "Red"
+      },
+      "annotations": {}
+    },
+    "tool_response": {
+      "questions": [
+        {
+          "question": "Do you prefer red or blue?",
+          "header": "Color",
+          "options": [
+            {
+              "label": "Red",
+              "description": "Pick red."
+            },
+            {
+              "label": "Blue",
+              "description": "Pick blue."
+            }
+          ],
+          "multiSelect": false
+        }
+      ],
+      "answers": {
+        "Do you prefer red or blue?": "Red"
+      },
+      "annotations": {}
+    },
+    "tool_use_id": "toolu_01HBmGGDqU2FJCNaG8L49vyr",
+    "duration_ms": 1
+  }
+}

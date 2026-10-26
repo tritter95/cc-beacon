@@ -1,0 +1,28 @@
+{
+  "seq": 19,
+  "receivedAt": "2026-10-26T02:46:51.676Z",
+  "receivedAtMs": 1792982811676,
+  "method": "POST",
+  "url": "/cc-beacon/v1/hook",
+  "headers": {
+    "host": "127.0.0.1:48899",
+    "user-agent": "curl/7.87.0",
+    "accept": "*/*",
+    "content-type": "application/json",
+    "x-cc-beacon-token": "phase0-literal-token",
+    "x-cc-beacon-window": "probe-testproj3",
+    "x-cc-beacon-entrypoint": "claude-vscode",
+    "x-cc-beacon-claude-pid": "99650",
+    "content-length": "796"
+  },
+  "body": {
+    "session_id": "ecb6772a-abf8-4c78-ba4b-61a2df6df470",
+    "transcript_path": "/Users/todd/.claude/projects/-private-tmp-claude-501--Users-todd-Documents-GitHub-cc-beacon-cd75701b-2811-4417-b23e-6271d383ad45-scratchpad-testproj3/ecb6772a-abf8-4c78-ba4b-61a2df6df470.jsonl",
+    "cwd": "/private/tmp/claude-501/-Users-todd-Documents-GitHub-cc-beacon/cd75701b-2811-4417-b23e-6271d383ad45/scratchpad/testproj3",
+    "scratchpad_dir": "/private/tmp/claude-501/-private-tmp-claude-501--Users-todd-Documents-GitHub-cc-beacon-cd75701b-2811-4417-b23e-6271d383ad45-scratchpad-testproj3/ecb6772a-abf8-4c78-ba4b-61a2df6df470/scratchpad",
+    "prompt_id": "194439fa-ad36-4836-a908-cd18c083be76",
+    "hook_event_name": "Notification",
+    "message": "Claude needs your permission to use AskUserQuestion",
+    "notification_type": "permission_prompt"
+  }
+}

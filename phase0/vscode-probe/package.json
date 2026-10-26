@@ -1,0 +1,29 @@
+{
+  "name": "ccb-probe",
+  "displayName": "CC Beacon Phase 0 Probe",
+  "description": "Throwaway probe: window state, URI routing and notification click-through.",
+  "version": "0.0.3",
+  "publisher": "phase0",
+  "private": true,
+  "engines": {
+    "vscode": "^1.93.0"
+  },
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "main": "./extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "ccbProbe.notify",
+        "title": "CC Beacon Probe: Post test notification for this window"
+      }
+    ]
+  },
+  "capabilities": {
+    "untrustedWorkspaces": {
+      "supported": true
+    },
+    "virtualWorkspaces": false
+  }
+}
