@@ -1,0 +1,192 @@
+{
+  "name": "cc-beacon",
+  "displayName": "CC Beacon",
+  "description": "Alerts you when a Claude Code session needs your input or has finished, whether VS Code is focused, in the background or minimized.",
+  "version": "0.1.0",
+  "publisher": "todd",
+  "private": true,
+  "license": "UNLICENSED",
+  "engines": {
+    "vscode": "^1.93.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "extensionKind": [
+    "workspace"
+  ],
+  "main": "./dist/extension.js",
+  "activationEvents": [
+    "onStartupFinished",
+    "onUri"
+  ],
+  "capabilities": {
+    "untrustedWorkspaces": {
+      "supported": true
+    },
+    "virtualWorkspaces": false
+  },
+  "scripts": {
+    "vscode:uninstall": "node ./dist/uninstall.js"
+  },
+  "contributes": {
+    "commands": [
+      { "command": "ccBeacon.setupHooks", "title": "Set Up Claude Code Hooks", "category": "CC Beacon" },
+      { "command": "ccBeacon.removeHooks", "title": "Remove Claude Code Hooks", "category": "CC Beacon" },
+      { "command": "ccBeacon.sendTestNotification", "title": "Send Test Notification", "category": "CC Beacon" },
+      { "command": "ccBeacon.mute", "title": "Mute for 1 Hour", "category": "CC Beacon" },
+      { "command": "ccBeacon.unmute", "title": "Unmute", "category": "CC Beacon" },
+      { "command": "ccBeacon.showSessions", "title": "Show Sessions", "category": "CC Beacon" },
+      { "command": "ccBeacon.diagnose", "title": "Diagnose", "category": "CC Beacon" },
+      { "command": "ccBeacon.openNotificationSettings", "title": "Open OS Notification Settings", "category": "CC Beacon" },
+      { "command": "ccBeacon.focusSession", "title": "Focus Claude Session", "category": "CC Beacon" }
+    ],
+    "menus": {
+      "commandPalette": [
+        { "command": "ccBeacon.focusSession", "when": "false" },
+        { "command": "ccBeacon.unmute", "when": "ccBeacon.muted" },
+        { "command": "ccBeacon.mute", "when": "!ccBeacon.muted" }
+      ]
+    },
+    "configuration": {
+      "title": "CC Beacon",
+      "properties": {
+        "ccBeacon.enabled": {
+          "type": "boolean",
+          "default": true,
+          "description": "Master switch for CC Beacon alerts."
+        },
+        "ccBeacon.port": {
+          "type": "number",
+          "default": 0,
+          "minimum": 0,
+          "maximum": 65535,
+          "scope": "machine",
+          "markdownDescription": "Loopback port the hub listens on. `0` means the default: 48812 plus a per-user offset. Changing it asks to update the Claude Code hooks."
+        },
+        "ccBeacon.alerts.needsInput": {
+          "type": "boolean",
+          "default": true,
+          "description": "Alert when Claude needs approval, has a question, or asks for input."
+        },
+        "ccBeacon.alerts.completed": {
+          "type": "boolean",
+          "default": true,
+          "description": "Alert when Claude finishes a turn."
+        },
+        "ccBeacon.alerts.failed": {
+          "type": "boolean",
+          "default": true,
+          "description": "Alert when Claude stops with an error."
+        },
+        "ccBeacon.osNotifications.when": {
+          "type": "string",
+          "enum": ["away", "notWatching", "always"],
+          "enumDescriptions": [
+            "Only when you can't see the window: another app is in front, VS Code is minimized, another VS Code window is focused, or you've been idle.",
+            "Also when you're in this window but looking at something other than the session.",
+            "Always, even while you're watching the session."
+          ],
+          "default": "away",
+          "description": "When to show an OS notification instead of an in-window alert."
+        },
+        "ccBeacon.inWindowToasts": {
+          "type": "boolean",
+          "default": true,
+          "description": "Show an in-window notification when you're in the window but not looking at the session."
+        },
+        "ccBeacon.completed.minTurnSeconds": {
+          "type": "number",
+          "default": 20,
+          "minimum": 0,
+          "description": "While you're in the window, don't alert for turns shorter than this. OS notifications when you're away are not affected."
+        },
+        "ccBeacon.sound.enabled": {
+          "type": "boolean",
+          "default": true,
+          "description": "Play a sound with alerts."
+        },
+        "ccBeacon.sound.volume": {
+          "type": "number",
+          "default": 0.6,
+          "minimum": 0,
+          "maximum": 1,
+          "description": "Volume for in-window alert sounds (0 to 1). OS notification sounds use the system volume."
+        },
+        "ccBeacon.sound.needsInput": {
+          "type": "string",
+          "default": "Glass",
+          "markdownDescription": "Sound for needs-input alerts: a macOS system sound name (`Basso`, `Blow`, `Bottle`, `Frog`, `Funk`, `Glass`, `Hero`, `Morse`, `Ping`, `Pop`, `Purr`, `Sosumi`, `Submarine`, `Tink`) or `none`."
+        },
+        "ccBeacon.sound.completed": {
+          "type": "string",
+          "default": "Hero",
+          "markdownDescription": "Sound for completed alerts. See `#ccBeacon.sound.needsInput#` for names."
+        },
+        "ccBeacon.sound.failed": {
+          "type": "string",
+          "default": "Basso",
+          "markdownDescription": "Sound for failed alerts. See `#ccBeacon.sound.needsInput#` for names."
+        },
+        "ccBeacon.preview.includeMessage": {
+          "type": "boolean",
+          "default": true,
+          "description": "Show Claude's message text in alerts. Turn off while screen sharing."
+        },
+        "ccBeacon.preview.maxChars": {
+          "type": "number",
+          "default": 140,
+          "minimum": 20,
+          "maximum": 1000,
+          "description": "Maximum length of message text in alerts."
+        },
+        "ccBeacon.unmatchedSessions": {
+          "type": "string",
+          "enum": ["ignore", "lastFocusedWindow"],
+          "enumDescriptions": [
+            "Ignore Claude sessions that don't belong to any VS Code window (for example, iTerm).",
+            "Send them to the most recently focused VS Code window."
+          ],
+          "default": "ignore",
+          "description": "What to do with Claude sessions running outside VS Code."
+        },
+        "ccBeacon.diagnostics.includeMessageText": {
+          "type": "boolean",
+          "default": false,
+          "description": "Include message text in the Diagnose report. Off by default so reports are safe to share."
+        }
+      }
+    },
+    "walkthroughs": [
+      {
+        "id": "setup",
+        "title": "Set up CC Beacon",
+        "description": "Get alerted when Claude Code needs you or has finished.",
+        "steps": [
+          {
+            "id": "hooks",
+            "title": "Connect Claude Code",
+            "description": "CC Beacon listens to Claude Code through hooks in ~/.claude/settings.json. You'll see the exact change before anything is written, and a backup is kept.\n[Set Up Claude Code Hooks](command:ccBeacon.setupHooks)",
+            "media": { "markdown": "media/walkthrough/hooks.md" },
+            "completionEvents": ["onCommand:ccBeacon.setupHooks"]
+          },
+          {
+            "id": "test",
+            "title": "Allow notifications and send a test",
+            "description": "macOS asks once whether CC Beacon may show notifications. Click the test notification when it appears; VS Code then asks once whether CC Beacon may open its link. Tick \"Don't ask again\".\n[Send Test Notification](command:ccBeacon.sendTestNotification)",
+            "media": { "markdown": "media/walkthrough/test.md" },
+            "completionEvents": ["onCommand:ccBeacon.sendTestNotification"]
+          },
+          {
+            "id": "persistent",
+            "title": "Keep alerts on screen",
+            "description": "By default macOS hides notifications after a few seconds. Set CC Beacon's alert style to **Persistent** so a request for approval stays until you see it.\n[Open Notification Settings](command:ccBeacon.openNotificationSettings)",
+            "media": { "markdown": "media/walkthrough/persistent.md" },
+            "completionEvents": ["onCommand:ccBeacon.openNotificationSettings"],
+            "when": "isMac"
+          }
+        ]
+      }
+    ]
+  }
+}

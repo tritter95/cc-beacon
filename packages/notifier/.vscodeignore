@@ -1,0 +1,6 @@
+src/**
+test/**
+native/darwin/*.swift
+native/darwin/build.sh
+native/darwin/Info.plist
+**/*.map

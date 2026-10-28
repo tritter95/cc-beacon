@@ -460,6 +460,8 @@ Write small throwaway test scripts that confirm the riskiest assumptions before 
 - `npm run package` / `npm run install-local` scripts, and the walkthrough with the test notification.
 - **Exit:** the manual checklist passes for local windows on your Mac and your Windows machine; latency under 500 ms p95; no duplicates with 3 windows.
 
+**Detailed plan:** [docs/phase1-plan.md](docs/phase1-plan.md). It splits Phase 1 into 1a (macOS, now) and 1b (Windows, after the Windows run), with milestones, specs and the decisions that refine this document.
+
 ### Phase 2: Polish, and remote if you use it (≈1–1.5 weeks)
 - Sessions view and Activity Bar badge, reminders, notification withdrawal on acknowledgment, Windows taskbar flash, persistent toasts.
 - Claude terminal profile and `New Claude Terminal` for exact terminal binding.

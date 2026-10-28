@@ -1,2 +1,8 @@
 .DS_Store
+node_modules/
+dist/
+packages/*/dist/
+packages/notifier/native/darwin/build/
 phase0/mac-helper/build/
+*.vsix
+!phase0/**/*.vsix
