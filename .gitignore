@@ -6,3 +6,4 @@ packages/notifier/native/darwin/build/
 phase0/mac-helper/build/
 *.vsix
 !phase0/**/*.vsix
+.vscode-test/

@@ -17,7 +17,7 @@ This turns PLAN §9 Phase 1 into milestones you can build and check one at a tim
 | M4 Notifier and helper | ✅ |
 | M5 Core in VS Code | ✅ Code done and smoke-tested in an isolated VS Code. ⏳ Manual checks with a real `claude` session, the panel and clicks |
 | M6 Diagnose, test notification, walkthrough | ✅ Code done. ⏳ Fresh-profile walkthrough run |
-| M7 fake-claude, integration smoke | ✅ `scripts/fake-claude.mjs`. ⏳ `@vscode/test-cli` test not written (it downloads a VS Code build); the isolated-instance smoke test below covers the same path for now |
+| M7 fake-claude, integration smoke | ✅ `scripts/fake-claude.mjs`, and the `@vscode/test-cli` smoke test (`npm run test:integration`; `npm test` runs it after the unit tests). It runs in a downloaded VS Code stable with HOME, the profile and the port in a throwaway sandbox |
 | M8 Exit verification | ⏳ Latency measured (below); manual checklist §6.2 pending |
 
 **Isolated smoke test.** Both VSIX files were installed into a separate VS Code profile (`--user-data-dir`, `--extensions-dir`), so your normal setup was untouched. `fake-claude` POSTs went through the real hub, and these results came out of it:
@@ -37,6 +37,7 @@ This turns PLAN §9 Phase 1 into milestones you can build and check one at a tim
 - M3: jsonc-parser 3.3.1 corrupts an array when removing its last element (`[1,2]` → `[12]`). Removals therefore replace or remove the whole event property, and every edit is checked against the intended object before anything is written.
 - Build: jsonc-parser's UMD entry can't be bundled; esbuild uses its ESM entry (`mainFields`). The build now fails if a bundle contains an unresolved relative `require`.
 - D7: "runs under VS Code" means under *any* instance of the VS Code app bundle, not this instance. That only matters when two VS Code instances run side by side, as in the smoke test.
+- D15: `AskUserQuestion`'s `PostToolUse` adds `answers` and `annotations` to `tool_input`, so it never matched its `PermissionRequest`, and an answered question stayed "needs you" until `Stop`. Its key now covers only `questions`. The integration test found this.
 - With `osNotifications.when` set to `notWatching` or `always`, an approval at L1 is still deferred for the 6 s grace period (§5.2). Revisit if that feels slow.
 
 ---

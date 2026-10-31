@@ -21,6 +21,11 @@ export class StatusBar implements vscode.Disposable {
     this.item.show();
   }
 
+  /** What the item shows right now. The integration test reads it. */
+  get text(): string {
+    return this.item.text;
+  }
+
   render(m: StatusModel): void {
     const count = (pred: (e: Entry) => boolean) => m.entries.filter(pred).length;
     const needs = count((e) => e.s.attention !== undefined && e.s.state === 'needs-input');

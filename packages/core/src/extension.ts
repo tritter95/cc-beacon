@@ -33,7 +33,12 @@ const NOTIFIER_ID = 'todd.cc-beacon-notifier';
 
 let coordinator: Coordinator | undefined;
 
-export function activate(context: vscode.ExtensionContext): void {
+/** What activate() returns. Only the integration test uses it: VS Code has no API to read a status bar item. */
+export interface CoreApi {
+  statusBarText(): string;
+}
+
+export function activate(context: vscode.ExtensionContext): CoreApi {
   const out = vscode.window.createOutputChannel('CC Beacon');
   const log = (m: string) => out.appendLine(`${new Date().toISOString()} ${m}`);
   const version = String(context.extension.packageJSON.version);
@@ -399,6 +404,7 @@ export function activate(context: vscode.ExtensionContext): void {
     void vscode.commands.executeCommand('workbench.action.openWalkthrough', `${context.extension.id}#setup`, false);
   }
   log(`activated ${version} in window ${windowId} (${vscode.workspace.name ?? 'empty window'}), port ${port()}`);
+  return { statusBarText: () => statusBar.text };
 }
 
 export async function deactivate(): Promise<void> {

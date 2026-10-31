@@ -103,6 +103,14 @@ describe('state machine on recorded runs', () => {
       ['reminder', 'idle'],
     ]);
   });
+
+  it('terminal run: answering a question withdraws it and resumes working', () => {
+    const answeredAt = timesOf('vscode-terminal-run', 'PostToolUse')[1];
+    const steps = fromRun('vscode-terminal-run').filter((s) => s.t <= answeredAt);
+    const { sessions, log } = simulate(steps, () => 2);
+    expect(log.filter((l) => l.t === answeredAt).map((l) => l.effect.type)).toEqual(['withdraw']);
+    expect([...sessions.values()][0]).toMatchObject({ state: 'working', attention: undefined });
+  });
 });
 
 describe('state machine rules', () => {

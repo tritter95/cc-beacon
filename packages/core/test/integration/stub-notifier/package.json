@@ -1,0 +1,25 @@
+{
+  "name": "cc-beacon-test-notifier",
+  "displayName": "CC Beacon Test Notifier",
+  "description": "Stands in for CC Beacon Notifier in the integration test: records Core's calls and posts nothing.",
+  "version": "0.0.0",
+  "publisher": "todd",
+  "private": true,
+  "license": "UNLICENSED",
+  "engines": {
+    "vscode": "^1.93.0"
+  },
+  "extensionKind": [
+    "ui"
+  ],
+  "main": "./dist/extension.js",
+  "activationEvents": [
+    "onStartupFinished",
+    "onCommand:ccBeacon.notifier.capabilities",
+    "onCommand:ccBeacon.notifier.notify",
+    "onCommand:ccBeacon.notifier.withdraw",
+    "onCommand:ccBeacon.notifier.playSound",
+    "onCommand:ccBeacon.notifier.requestPermission",
+    "onCommand:ccBeacon.notifier.openSettings"
+  ]
+}

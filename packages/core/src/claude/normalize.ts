@@ -116,9 +116,12 @@ function errorText(body: Obj): string | undefined {
   return undefined;
 }
 
+/** Pairs a PermissionRequest with its PostToolUse (D15). AskUserQuestion's PostToolUse adds the
+ *  answers to tool_input, so only its questions count. */
 export function toolKey(tool: string | undefined, input: unknown): string | undefined {
   if (!tool) return undefined;
-  return createHash('sha1').update(`${tool}\0${canonicalJson(input)}`).digest('hex').slice(0, 16);
+  const asked = tool === 'AskUserQuestion' && isObj(input) ? { questions: input.questions } : input;
+  return createHash('sha1').update(`${tool}\0${canonicalJson(asked)}`).digest('hex').slice(0, 16);
 }
 
 export function canonicalJson(v: unknown): string {
